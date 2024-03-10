@@ -13,9 +13,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Sofia+Sans:wght@500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
         <Navbar />
-        <div className="mt-[3rem]">{children}</div>
+        <div className="mt-[6rem]">{children}</div>
         <Footer />
       </body>
     </html>
