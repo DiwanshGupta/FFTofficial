@@ -43,3 +43,12 @@
   box-shadow: 0 5px #d2d779;
   transform: translateY(4px);
 }
+
+.scroll-container {
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
