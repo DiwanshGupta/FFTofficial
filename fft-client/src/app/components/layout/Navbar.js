@@ -53,7 +53,7 @@ const Navbar = () => {
                     </Link>
                     <Link href={'/pages/content'} className="cursor-pointer">Content</Link>
                     <Link href={'/pages/about'} className="cursor-pointer">About us</Link>
-                    <Link href={'/pages/courses'} className="cursor-pointer">Courses</Link>
+                    <Link href={'/pages/subjects'} className="cursor-pointer">Subjects</Link>
                     <Link href={'/'} className=" flex items-center gap-1 cursor-pointer">
                         <FaSearch className="text-xs  hover:animate-spin" />
                         <span>Search</span>
