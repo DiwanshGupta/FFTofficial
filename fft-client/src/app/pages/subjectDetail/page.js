@@ -1,4 +1,5 @@
 "use client"
+import { AddTopicForm } from "@/app/components/AddDataForm";
 import DisplayVideo from "@/app/components/DisplayVideo";
 import Link from "next/link";
 import { useState } from "react";
@@ -7,6 +8,7 @@ import { FaHandPaper, FaYoutube } from "react-icons/fa";
 
 const units = [
     {
+        id: '1',
         title:'title1',
         topics:[
             {
@@ -34,6 +36,7 @@ const units = [
         notes:5
     },
     {
+        id: '2',
         title:'title2',
         topics:[
             {
@@ -60,6 +63,12 @@ const units = [
         ],
         notes:5
     },
+    {
+        id: '3',
+        title:'title3',
+        topics:[],
+        notes:5
+    },
 ]
 
 const subjectDetail = ({subjectName}) => {
@@ -69,6 +78,7 @@ const subjectDetail = ({subjectName}) => {
     const [showVideo,setShowVideo] = useState(false);
     const [videoLink,setVideoLink] = useState('');
     const [currentTopic,setCurrentTopic] = useState('');
+    const [showAddTopic,setShowAddTopic] = useState(false);
 
     const handleVideoClick = (link,topic)=>{
         setShowVideo(true);
@@ -76,6 +86,10 @@ const subjectDetail = ({subjectName}) => {
         setCurrentTopic(topic);
         // window.location.reload();
     };
+    const handleAddTopic = () =>{
+        setShowAddTopic(true);
+    };
+    const handleCreateTopic = () =>{};
 
     return <>
         <section className="py-8 w-full">
@@ -84,17 +98,12 @@ const subjectDetail = ({subjectName}) => {
                     <h1 className="text-5xl text-yellow-600 text-center">{subjectName ? subjectName : 'Subject Name'}</h1>
                     <div className="flex flex-col md:mx-4">
                         <div className="my-8 pt-10 items-center justify-center">
-                            <p className="text-xl">"Step into the immersive journey of learning as we delve into the intricate details of each unit, accompanied by comprehensive notes to unravel the depths of our subject."</p>
+                            <p className="text-xl italic">"Step into the immersive journey of learning as we delve into the intricate details of each unit, accompanied by comprehensive notes to unravel the depths of our subject."</p>
                         </div>
                         <div className=" w-full">
-                            <div className=" py-3 px-2 flex items-center justify-between w-full border rounded-t-md cursor-pointer" onClick={() => {if(showAllUnits == true){setShowAllUnits(false)}else{(true)}}}>
+                            <div className=" py-3 px-2 flex items-center justify-between w-full border rounded-t-md cursor-pointer" onClick={() => setShowAllUnits(prevState => !prevState)}>
                                 <h1 className="text-xl uppercase">All Units</h1>
-                                <BiPlus 
-                                    className=" cursor-pointer text-3xl" 
-                                    onClick={() => {
-                                        if(showAllUnits == true){setShowAllUnits(false)}else{(true)}
-                                    }}
-                                />
+                                <BiPlus  className=" cursor-pointer text-3xl"/>
                             </div>
                             {showAllUnits && 
                                 <div className="border">
@@ -119,28 +128,52 @@ const subjectDetail = ({subjectName}) => {
                                                 <div className="flex items-center justify-between border border-b-2 border-t-0 w-full px-5">
                                                     <table className="w-full my-2">
                                                         <thead className="">
-                                                            <tr className=" text-lg">
-                                                                <td>S.No</td>
-                                                                <td>Topic</td>
-                                                                <td>Solution</td>
-                                                                <td>Notes</td>
-                                                                <td>Must Do</td>
-                                                                <td>MostRepeated</td>
-                                                            </tr>
+                                                            {unit.topics && (!unit.topics.length<=0) &&
+                                                                <tr className=" text-lg">
+                                                                    <td>S.No</td>
+                                                                    <td>Topic</td>
+                                                                    <td>Solution</td>
+                                                                    <td>Notes</td>
+                                                                    <td>Must Do</td>
+                                                                    <td>MostRepeated</td>
+                                                                </tr>
+                                                            }
                                                         </thead>
                                                         <tbody>
-                                                            {unit.topics && unit.topics.map((topic,i)=>(
-                                                                <tr className=" w-full my-2">
+                                                            {unit.topics && unit?.topics.map((topic,i)=>(
+                                                                <tr className=" w-full my-2" key={i}>
                                                                     <td className="border px-1 text-md text-center">{i+1}.</td>
-                                                                    <td className="border px-1 text-md">{topic.topicName}</td>
-                                                                    <td className="border px-4 text-md" ><Link href={'#'} onClick={()=> handleVideoClick(topic.solution,topic.topicName)}><FaYoutube /></Link></td>
-                                                                    <td className="border px-4 text-md"><Link href={topic.notes}><BiBook /></Link></td>
-                                                                    <td className="border px-4 text-md"><Link href={topic.mustDo}><BiBookOpen /></Link></td>
-                                                                    <td className="border px-4 text-md"><Link href={topic.mostRepeated}><BiBook /></Link></td>
+                                                                    <td className="border px-1 text-md">{topic?.topicName}</td>
+                                                                    <td className="border px-4 text-md" ><Link href={'#'} onClick={()=> handleVideoClick(topic?.solution,topic?.topicName)}><FaYoutube /></Link></td>
+                                                                    <td className="border px-4 text-md"><Link href={topic?.notes}><BiBook /></Link></td>
+                                                                    <td className="border px-4 text-md"><Link href={topic?.mustDo}><BiBookOpen /></Link></td>
+                                                                    <td className="border px-4 text-md"><Link href={topic?.mostRepeated}><BiBook /></Link></td>
                                                                 </tr>
                                                             ))}
                                                         </tbody>
                                                     </table>
+                                                    {unit.topics.length<=0 &&
+                                                        <div className="w-full border">
+                                                            <span className="text-center cursor-pointer text-xl w-full py-1 my-2" onClick={handleAddTopic}>
+                                                                {!showAddTopic &&
+                                                                    <div className="flex items-center justify-center ">
+                                                                        Add new Topic &nbsp;<BiPlus className="text-2xl"/>
+                                                                    </div>
+                                                                }
+                                                            </span>
+                                                            {showAddTopic && 
+                                                                <>
+                                                                    <div className="flex flex-col item-center justify-center rounded-md px-4">
+                                                                        <AddTopicForm />
+                                                                        <div className="flex items-center mt-2">
+                                                                            <button className="border border-yellow-600 px-2 py-1 mx-1 rounded-md bg-[#FEAF05] hover:bg-transparent hover:text-black shadow-xl" onClick={handleCreateTopic}>Create</button>
+                                                                            <button className="border border-yellow-600 px-2 py-1 mx-1 rounded-md bg-[#FEAF05] hover:bg-transparent hover:text-black shadow-xl" onClick={()=>{setShowAddTopic(false)}}>Cancle</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </>
+                                                            }
+                                                        </div>
+                                                    }
                                                 </div>
                                             }
                                         </div>
