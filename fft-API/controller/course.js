@@ -3,7 +3,7 @@ import Teacher from "../model/teacher.js";
 
 const uploadCourse = async (req, res) => {
   try {
-    const { subject, pyq, mustdo, mostRepeated, units, price } = req.body;
+    const { subject, pyq, mustdo, mostRepeated, units, price, img } = req.body;
 
     const { id: teacherId } = req.params;
 
@@ -22,6 +22,7 @@ const uploadCourse = async (req, res) => {
       mustdo,
       mostRepeated,
       units,
+      img,
       price,
     });
 

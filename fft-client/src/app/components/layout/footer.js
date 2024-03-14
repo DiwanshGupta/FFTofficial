@@ -15,7 +15,7 @@ const Footer = () => {
           <p className="text-xl">
             <span className="text-3xl font-semibold">FFT Team</span>
             <br />
-            Providing Delicious Food since 2023
+            Best Learning platform
           </p>
         </aside>
         <nav>

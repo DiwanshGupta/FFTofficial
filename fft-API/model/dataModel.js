@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const courseSchema = new mongoose.Schema(
   {
     subject: String,
+    img: String,
     pyq: [String],
     mustdo: String,
     mostRepeated: String,

@@ -6,7 +6,11 @@ const Service = () => {
       <div className="flex flex-col gap-12 ">
         <div className="flex flex-col md:flex-row justify-between p-3 bg-[#FEAF05] sm:gap-20     md:gap-14 lg:gap-44">
           {" "}
-          <p className="bg-white h-fit justify-center m-auto p-5 rounded-xl shadow-2xl hover:shadow-lg shadow-gray-600">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="bg-white h-fit justify-center m-auto p-5 rounded-xl shadow-2xl hover:shadow-lg shadow-gray-600"
+          >
             Welcome to Fifteen for teen,
             <br /> Elevate Your College Experience
             <br />
@@ -37,7 +41,11 @@ const Service = () => {
             className="md:h-[10rem] m-auto items-center lg:h-[20rem] sm:h-[10rem] hidden md:block md:mr-4 rounded-lg"
             alt="images"
           />{" "}
-          <p className="bg-white justify-center flex flex-col items-start m-auto p-5 h-fit rounded-xl shadow-2xl hover:shadow-lg shadow-gray-600">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1100"
+            className="bg-white justify-center flex flex-col items-start m-auto p-5 h-fit rounded-xl shadow-2xl hover:shadow-lg shadow-gray-600"
+          >
             We provide notes, important questions, informative videos, and many
             more things to help every college student to score a great result.
             Also, we have a vast community which also have an interactive group

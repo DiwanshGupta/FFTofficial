@@ -2,13 +2,14 @@ import User from "../model/user.js";
 
 const register = async (req, res) => {
   try {
-    const { username, email, password, college, semester } = req.body;
+    const { username, email, password, college, semester, branch } = req.body;
     const UserExist = await User.findOne({ email });
     if (UserExist) {
       return res.status(400).json({ msg: "Email Already exist" });
     }
     const Usercreated = await User.create({
       username,
+      branch,
       email,
       password,
       college,

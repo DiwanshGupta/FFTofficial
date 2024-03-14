@@ -5,19 +5,22 @@
   font-family: "Sofia Sans", sans-serif;
   /* background: linear-gradient(
     180deg,
-    rgba(71, 245, 225, 0.216) 0%,
-    rgba(71, 245, 222, 0) 100%
+    rgba(125, 125, 10, 0.216) 0%,
+    rgba(24, 26, 5, 0.381) 100%
   ); */
   background-image: url(/pexels-no-name-66997.jpg);
+
   background-size: cover;
+  background-attachment: fixed;
+
+  /* background-color: #020a13; */
 }
 .navbg {
-  background: linear-gradient(
-    180deg,
-    rgba(207, 223, 104, 0.381) 0%,
-    rgba(71, 245, 222, 0.304) 100%
-  );
-  background-size: cover;
+  background: #feaf054c;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 /* button css */
 
@@ -45,10 +48,55 @@
 }
 
 .scroll-container {
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #ff3d00;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
 }
