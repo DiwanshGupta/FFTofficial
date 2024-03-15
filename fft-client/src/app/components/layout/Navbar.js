@@ -128,7 +128,7 @@ const Navbar = () => {
               } pt-20`}
             >
               <div className="flex flex-col gap-8 items-center font-semibold text-xl text-yellow-500">
-                <span className=" flex items-center gap-1 border-b border-yellow-500/35 w-24  justify-center">
+                <span className=" flex items-center gap-1 border-b border-yellow-500 w-24  justify-center">
                   <FaHome className="cursor-pointer" />{" "}
                   <span className="text-xl cursor-pointer" onClick={handleNav}>
                     {" "}
@@ -137,19 +137,19 @@ const Navbar = () => {
                 </span>
                 <span
                   onClick={handleNav}
-                  className="border-b cursor-pointer border-yellow-500/35 w-24  justify-center flex"
+                  className="border-b cursor-pointer border-yellow-500 w-24  justify-center flex"
                 >
                   Content
                 </span>
                 <span
                   onClick={handleNav}
-                  className="border-b border-yellow-500/35 cursor-pointer w-24  justify-center flex"
+                  className="border-b border-yellow-500 cursor-pointer w-24  justify-center flex"
                 >
                   About us
                 </span>
                 <span
                   onClick={handleNav}
-                  className=" flex items-center gap-1 border-b border-yellow-500/35 w-24  justify-center"
+                  className=" flex items-center gap-1 border-b border-yellow-500 w-24  justify-center"
                 >
                   <FaSearch className="text-xs  hover:animate-spin" />
                   <span>Search</span>{" "}

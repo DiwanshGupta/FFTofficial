@@ -92,7 +92,7 @@ const subjectDetail = ({subjectName}) => {
     const handleCreateTopic = () =>{};
 
     return <>
-        <section className="py-8 w-full">
+        <section className="pt-32 w-full h-screen">
             <div className="flex">
                 <div className="w-1/2">
                     <h1 className="text-5xl text-yellow-600 text-center">{subjectName ? subjectName : 'Subject Name'}</h1>

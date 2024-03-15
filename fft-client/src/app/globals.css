@@ -8,7 +8,7 @@
     rgba(125, 125, 10, 0.216) 0%,
     rgba(24, 26, 5, 0.381) 100%
   ); */
-  background-image: url(/pexels-no-name-66997.jpg);
+  /* background-image: url(/pexels-no-name-66997.jpg); */
 
   background-size: cover;
   background-attachment: fixed;
@@ -16,7 +16,8 @@
   /* background-color: #020a13; */
 }
 .navbg {
-  background: #feaf054c;
+  /* background: #feaf054c; */
+  background: #E1AD01;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
