@@ -6,12 +6,12 @@ import {
   uploadCourse,
 } from "../controller/course.js";
 import { authorize } from "../middleware/authorization.js";
-import { authenticate } from "../middleware/authenticate.js";
+import authMiddleware from "../middleware/authmiddleware.js";
 const router = express.Router();
 
 router.get("/get/course/", getallCourse);
-router.post("/upload/:id", authenticate, uploadCourse);
-router.put("/update/:id", authenticate, authorize, updateCourse);
-router.delete("/delete/:id", authenticate, authorize, deleteCourse);
-router.get("/get/upload/:id", authenticate, authorize, getallCourse);
+router.post("/upload/:id", authMiddleware, uploadCourse);
+router.put("/update/:id", authMiddleware, authorize, updateCourse);
+router.delete("/delete/:id", authMiddleware, authorize, deleteCourse);
+router.get("/get/upload/:id", authMiddleware, authorize, getallCourse);
 export default router;

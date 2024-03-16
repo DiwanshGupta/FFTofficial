@@ -81,6 +81,9 @@ const Navbar = () => {
                   <Link href={"/pages/subjects"} className="cursor-pointer">
                     Subjects
                   </Link>
+                  <Link href={"/pages/profile"} className="cursor-pointer">
+                    profile
+                  </Link>
                   <Link
                     href={"/"}
                     className=" flex items-center gap-1 cursor-pointer"

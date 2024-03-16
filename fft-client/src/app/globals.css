@@ -17,7 +17,7 @@
 }
 .navbg {
   /* background: #feaf054c; */
-  background: #E1AD01;
+  background: #e1ad01;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -59,7 +59,7 @@
 
 .loader {
   width: 48px;
-  height: 48px;
+  height: fit-content;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
