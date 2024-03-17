@@ -4,7 +4,7 @@ import cors from "cors";
 import connectDb from "./utils/db.js";
 import authRoutes from "./routes/user.js";
 import teachRoutes from "./routes/teacher.js";
-import courseRoutes from "./routes/course.js";
+import subjectRoutes from "./routes/subject.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -22,11 +22,12 @@ app.get("/", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/auth/teacher", teachRoutes);
-app.use("/course/", courseRoutes);
+app.use("/subject/", subjectRoutes);
 
 // Connectivity
 const port = process.env.PORT || 500;
 connectDb();
 app.listen(port, () => {
-  console.log(`Server is running at ${port}`);
+    console.log(`Server is running at ${port}`);
 });
+

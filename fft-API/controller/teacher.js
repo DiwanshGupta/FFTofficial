@@ -1,4 +1,5 @@
 import teacher from "../model/teacher.js";
+import User from "../model/user.js";
 
 const register = async (req, res) => {
   try {

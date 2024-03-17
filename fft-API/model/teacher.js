@@ -16,7 +16,7 @@ const teacherSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    courses: [],
+    subject: [],
     isadmin: {
       type: Boolean,
       default: true,
