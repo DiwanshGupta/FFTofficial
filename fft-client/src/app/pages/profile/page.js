@@ -30,7 +30,7 @@ const Profile = () => {
               />
             </div>
             <div className="flex flex-col items-center mx-auto mt-2">
-              <span className="text-xl font-bold">{user.username}</span>
+              <span className="text-xl font-bold">{user?.username}</span>
               <span className="text-lg font-serif">
                 Full Stack web Developerr
               </span>
@@ -80,19 +80,19 @@ const Profile = () => {
                 <span className="flex items-center justify-between border-b w-full mx-2 text-xl font-serif py-4">
                   FullName
                   <span className="text-lg font-thin text-black/60">
-                    {user.username}{" "}
+                    {user?.username}{" "}
                   </span>
                 </span>
                 <span className="flex items-center justify-between border-b w-full mx-2 text-xl font-serif py-4">
                   Phone
                   <span className="text-lg font-sans text-black/60">
-                    {user.username}{" "}
+                    {user?.username}{" "}
                   </span>
                 </span>
                 <span className="flex items-center justify-between border-b w-full mx-2 text-xl font-serif py-4">
                   Email
                   <span className="text-lg font-thin text-black/60">
-                    {user.email}{" "}
+                    {user?.email}{" "}
                   </span>
                 </span>
               </div>
@@ -100,19 +100,19 @@ const Profile = () => {
                 <span className="flex items-center justify-between border-b w-full mx-2 text-xl font-serif py-4">
                   Collage
                   <span className="text-sm font-thin text-black/60">
-                    {user.college}{" "}
+                    {user?.college}{" "}
                   </span>
                 </span>
                 <span className="flex items-center justify-between border-b w-full mx-2 text-xl font-serif py-4">
                   Semester
                   <span className="text-lg font-thin text-black/60">
-                    {user.semester}{" "}
+                    {user?.semester}{" "}
                   </span>
                 </span>
                 <span className="flex items-center justify-between border-b w-full mx-2 text-xl font-serif py-4">
                   Branch
                   <span className="text-lg font-thin text-black/60">
-                    {user.branch}{" "}
+                    {user?.branch}{" "}
                   </span>
                 </span>
               </div>
